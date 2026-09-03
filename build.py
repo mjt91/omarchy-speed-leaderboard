@@ -11,6 +11,7 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data.json"
+LOGO = ROOT / "assets" / "logo.txt"
 OUT = ROOT / "index.html"
 
 
@@ -20,6 +21,16 @@ def esc(value):
 
 def link(url, label):
     return f'<a href="{esc(url)}" rel="noopener">{esc(label)}</a>'
+
+
+def render_logo():
+    """The same logo.txt the installer prints above the completion time (MIT,
+    from omacom/omarchy). Using the real one keeps the site honest about what
+    it is looking at."""
+    if not LOGO.exists():
+        return ""
+    art = esc(LOGO.read_text().rstrip("\n"))
+    return f'<pre class="logo" role="img" aria-label="Omarchy">{art}</pre>'
 
 
 def render_record(run, meta):
@@ -108,6 +119,7 @@ def build():
 <div class="page">
 
   <header>
+{render_logo()}
     <h1>{esc(meta['title'])}</h1>
     <p class="subtitle">{esc(meta['tagline'])}</p>
   </header>

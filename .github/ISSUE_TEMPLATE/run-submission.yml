@@ -1,0 +1,79 @@
+name: Submit a run
+description: Claim a time for the leaderboard
+title: "Run: 0m 00s"
+labels: ["needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Times here are taken on trust. The completion screen shows one line and nothing else —
+        no version, no hardware, no date — so a screenshot cannot prove anything, and we are not
+        going to pretend otherwise. Please just be honest; that is the whole system.
+
+  - type: input
+    id: time
+    attributes:
+      label: Installer-reported time
+      description: Copy it exactly as the completion screen printed it. Minutes are always shown, so 50 seconds is `0m 50s`.
+      placeholder: 0m 50s
+    validations:
+      required: true
+
+  - type: textarea
+    id: proof
+    attributes:
+      label: Completion screen
+      description: Drag your screenshot in here. It should read `Installed Omarchy in …`.
+      placeholder: Paste or drag the image into this box.
+    validations:
+      required: true
+
+  - type: input
+    id: drive
+    attributes:
+      label: Drive
+      description: The one spec that actually explains a fast time. Model if you have it, type if you don't.
+      placeholder: Samsung 990 Pro 2TB NVMe
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Omarchy version
+      description: Self-reported — the completion screen doesn't carry it.
+      placeholder: "4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: machine
+    attributes:
+      label: Machine
+      placeholder: Framework Laptop 13 (2025)
+    validations:
+      required: false
+
+  - type: input
+    id: specs
+    attributes:
+      label: CPU and RAM
+      placeholder: Ryzen 7 7840U, 32GB
+    validations:
+      required: false
+
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you?
+      description: Name, handle, or a link. Leave blank to stay anonymous.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: honest
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is a real install I actually ran, and the time is the one the installer printed.
+          required: true

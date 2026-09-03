@@ -105,3 +105,18 @@ th, td { padding: 0.65rem 0.75rem 0.65rem 0; border-bottom: 1px solid rgb(65 72 
 .notice p:last-child { margin-bottom: 0; }
 
 footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--omarchy-terminal-black); }
+
+/* The installer's own logo.txt, rendered at whatever size keeps its 81 columns
+   on screen. Scales with the viewport so it never forces a horizontal scroll. */
+.logo {
+  font-family: var(--mdst-font-mono);
+  font-size: clamp(0.3rem, 1.15vw, 0.78rem);
+  line-height: 1.05;
+  color: var(--omarchy-blue);
+  background: none;
+  border: 0;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  overflow: visible;
+  white-space: pre;
+}

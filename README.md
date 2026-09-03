@@ -9,8 +9,9 @@ DHH called 50 seconds the "Omarchy Quattro Install World Record". This site keep
 
 ## Submitting a time
 
-Open an issue with a screenshot of Omarchy's completion screen (the one reading
-`Installed Omarchy in {m}m {s}s`) and, at minimum, the drive you installed to.
+Use the [Submit a run](https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?template=run-submission.yml)
+issue form. It asks for the time exactly as the completion screen printed it, a screenshot of that
+screen, and the drive you installed to — the one spec that actually explains a fast number.
 
 Times here are taken on trust. That screen carries no version, hardware or date, so a screenshot
 proves nothing and this site does not pretend otherwise — see
@@ -29,6 +30,7 @@ Open `index.html` directly, or `python3 -m http.server` for a local server.
 - `data.json` — runs, milestones, baselines. The only file that changes when a record falls.
 - `build.py` — the renderer.
 - `assets/theme.css` — Omarchy's Tokyo Night palette and JetBrains Mono, over modest-ui.
+- `assets/logo.txt` — Omarchy's own `logo.txt` (MIT), the one its installer prints.
 - `vendor/` — vendored [modest-ui](https://modest-ui.com/) (npm: `mdst-ui`), MIT.
 - `index.html` — generated. Rebuild rather than editing it by hand.
 

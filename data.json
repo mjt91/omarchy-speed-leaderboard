@@ -3,10 +3,9 @@
     "title": "Omarchy Speed Leaderboard",
     "tagline": "DHH called 50 seconds the Omarchy Quattro Install World Record. This is the book that keeps it.",
     "repo": "https://github.com/mjt91/omarchy-speed-leaderboard",
-    "submit_url": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?title=Run%3A+0m+00s&body=Paste+your+Completion+Screen+screenshot+here%2C+plus+your+drive.",
+    "submit_url": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?template=run-submission.yml",
     "updated": "2026-09-03"
   },
-
   "runs": [
     {
       "id": "hp-zbook-50s",
@@ -39,7 +38,6 @@
       "source_label": "note.com write-up"
     }
   ],
-
   "milestones": [
     {
       "date": "2025-08-25",
@@ -74,7 +72,6 @@
       "source_label": "Omarchy 4.0.0 release notes"
     }
   ],
-
   "baselines": [
     {
       "os": "Windows 11 (26H2)",
