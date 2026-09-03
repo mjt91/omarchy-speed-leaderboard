@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omarchy Speed Leaderboard</title>
+<meta name="description" content="DHH called 50 seconds the Omarchy Quattro Install World Record. This is the book that keeps it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="vendor/modest-ui.min.css">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body class="mdst-ui">
+<div class="page">
+
+  <header>
+    <h1>Omarchy Speed Leaderboard</h1>
+    <p class="subtitle">DHH called 50 seconds the Omarchy Quattro Install World Record. This is the book that keeps it.</p>
+  </header>
+
+  <main>
+
+    <div class="record">
+      <div class="record__label">Current world record</div>
+      <div class="record__time">0m 50s</div>
+      <p class="record__meta">
+        <strong>DHH</strong> on a <strong>HP ZBook Ultra G1a</strong>
+        &mdash; AMD Ryzen AI Max 395+, NVMe SSD (model not stated)<br>
+        Omarchy 4.0 (Quattro) &middot; 2026-08-14 &middot; <a href="https://x.com/dhh/status/2088218786302136694" rel="noopener">@dhh on X</a>
+      </p>
+    </div>
+    <p class="muted small">Declared by DHH as the Omarchy Quattro Install World Record.</p>
+
+
+    <h2>How it got here</h2>
+    <p class="lede">Omarchy went from a five-minute install to under a minute in roughly a year. Most of that
+    came from one decision: making the installer work offline, which took the network out of the equation and
+    left the disk as the thing that decides your number.</p>
+    <ul class="timeline">
+      <li>
+        <div class="timeline__when">2025-08-25 &middot; Omarchy 2.0</div>
+        <div class="timeline__head">Under five minutes, with a fast connection</div>
+        <p class="timeline__body">DHH publishes the breakdown: one minute formatting and encrypting the drive, one minute installing Arch, two minutes forty installing and configuring Omarchy itself. The install still needs the network, so bandwidth is part of everyone&#x27;s number.</p>
+        <p class="small muted"><a href="https://x.com/dhh/status/1959857610489839754" rel="noopener">@dhh on X</a></p>
+      </li>
+      <li>
+        <div class="timeline__when">2025-09-08 &middot; Omarchy 3.0 RC</div>
+        <div class="timeline__head">Under three minutes</div>
+        <p class="timeline__body">Ryan Hughes rebuilds the install flow around a new offline ISO. Removing the network removes the largest source of variance between machines — from here on, an install time is a statement about your disk, not your ISP.</p>
+        <p class="small muted"><a href="https://x.com/dhh/status/1965128234871488957" rel="noopener">@dhh on X</a></p>
+      </li>
+      <li>
+        <div class="timeline__when">2025-09-10 &middot; Omarchy 3.0 RC</div>
+        <div class="timeline__head">Two minutes</div>
+        <p class="timeline__body">Two days later, the same work lands at two minutes flat for a full install of a complete, configured operating system.</p>
+        <p class="small muted"><a href="https://x.com/dhh/status/1965857746282229793" rel="noopener">@dhh on X</a></p>
+      </li>
+      <li>
+        <div class="timeline__when">2026-08-14 &middot; Omarchy 4.0 (Quattro)</div>
+        <div class="timeline__head">Sub-minute becomes possible</div>
+        <p class="timeline__body">The Quattro release notes claim installation is over 30% faster and the ISO more than a gigabyte smaller, at under 6GB — with sub-minute installs now possible. Days later, an HP ZBook Ultra G1a turns the claim into 50 seconds.</p>
+        <p class="small muted"><a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0" rel="noopener">Omarchy 4.0.0 release notes</a></p>
+      </li>
+    </ul>
+
+    <h2>Recorded runs</h2>
+    <p class="lede">One unclassed board. Faster hardware wins, and that is fine &mdash; the specs sit next to
+    every time so you can read a number for what it is.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Time</th><th>Who</th><th>Version</th><th>Drive &amp; machine</th><th>Date</th><th>Source</th></tr></thead>
+        <tbody>
+        <tr>
+          <td class="time">0m 50s</td>
+          <td>DHH</td>
+          <td>4.0 (Quattro)</td>
+          <td>NVMe SSD (model not stated)<br><span class="muted small">HP ZBook Ultra G1a &middot; AMD Ryzen AI Max 395+</span></td>
+          <td>2026-08-14</td>
+          <td><span class="tag">Observed in the wild</span><br><span class="small"><a href="https://x.com/dhh/status/2088218786302136694" rel="noopener">@dhh on X</a></span></td>
+        </tr>
+        <tr>
+          <td class="time">7m 53s</td>
+          <td>wise_sable1214</td>
+          <td>3.1.5</td>
+          <td>1TB HDD (spinning disk)<br><span class="muted small">HP Slimline 260-p030jp (2017) &middot; Core i3 6100T, 8GB RAM</span></td>
+          <td>2025-11-05</td>
+          <td><span class="tag">Observed in the wild</span><br><span class="small"><a href="https://note.com/wise_sable1214/n/ncc7ffd5e59b1" rel="noopener">note.com write-up</a></span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notice">
+      <h3>About the times on this page</h3>
+      <p>Every time here is the number Omarchy's own installer printed on its completion screen
+      &mdash; <span class="time">Installed Omarchy in 0m 50s</span> &mdash; not a stopwatch held by us or anyone else.</p>
+      <p><strong>These times are taken on trust.</strong> That screen shows one line of text and nothing else:
+      no version, no hardware, no date. A screenshot of it proves nothing, and we are not going to pretend
+      otherwise. Versions and specs are self-reported. Runs marked <span class="tag">Observed in the wild</span>
+      were collected from public posts by people who never agreed to any of this.</p>
+      <p class="small">Got a faster one? <a href="https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?title=Run%3A+0m+00s&amp;body=Paste+your+Completion+Screen+screenshot+here%2C+plus+your+drive." rel="noopener">Open an issue</a> with your completion screen and your drive.</p>
+    </div>
+
+    <h2>For scale</h2>
+    <p class="lede">Why any of this is worth a page. These are typical reported ranges rather than controlled
+    measurements &mdash; the point is the order of magnitude, not the decimal.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>System</th><th>Typical install</th><th>Notes</th></tr></thead>
+        <tbody>
+        <tr>
+          <td>Windows 11 (26H2)</td>
+          <td class="time">15–30 min</td>
+          <td class="muted">Core install on a modern NVMe SSD, before out-of-box setup, drivers and updates. <a href="https://learn.microsoft.com/en-us/answers/questions/4272576/how-much-time-to-take-for-windows-11-installation" rel="noopener">Microsoft Q&amp;A</a></td>
+        </tr>
+        <tr>
+          <td>macOS Sequoia</td>
+          <td class="time">30–60 min</td>
+          <td class="muted">Full erase-and-reinstall on supported hardware, network dependent. <a href="https://cleanmymac.com/faq/how-long-macos-sequoia-takes-to-install" rel="noopener">CleanMyMac FAQ</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="small muted">
+    <p>An unofficial fan project. Not affiliated with, endorsed by, or run by DHH, Basecamp, 37signals or the
+    Omarchy project. Omarchy is <a href="https://omarchy.org/" rel="noopener">omarchy.org</a>.</p>
+    <p>Corrections and submissions: <a href="https://github.com/mjt91/omarchy-speed-leaderboard" rel="noopener">github.com/mjt91/omarchy-speed-leaderboard</a> &middot;
+    Last updated 2026-09-03</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Omarchy Speed Leaderboard",
+    "tagline": "DHH called 50 seconds the Omarchy Quattro Install World Record. This is the book that keeps it.",
+    "repo": "https://github.com/mjt91/omarchy-speed-leaderboard",
+    "submit_url": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?title=Run%3A+0m+00s&body=Paste+your+Completion+Screen+screenshot+here%2C+plus+your+drive.",
+    "updated": "2026-09-03"
+  },
+
+  "runs": [
+    {
+      "id": "hp-zbook-50s",
+      "time": "0m 50s",
+      "seconds": 50,
+      "who": "DHH",
+      "version": "4.0 (Quattro)",
+      "machine": "HP ZBook Ultra G1a",
+      "drive": "NVMe SSD (model not stated)",
+      "specs": "AMD Ryzen AI Max 395+",
+      "date": "2026-08-14",
+      "origin": "observed",
+      "note": "Declared by DHH as the Omarchy Quattro Install World Record.",
+      "source": "https://x.com/dhh/status/2088218786302136694",
+      "source_label": "@dhh on X"
+    },
+    {
+      "id": "hp-slimline-7m53s",
+      "time": "7m 53s",
+      "seconds": 473,
+      "who": "wise_sable1214",
+      "version": "3.1.5",
+      "machine": "HP Slimline 260-p030jp (2017)",
+      "drive": "1TB HDD (spinning disk)",
+      "specs": "Core i3 6100T, 8GB RAM",
+      "date": "2025-11-05",
+      "origin": "observed",
+      "note": "The slow end of the range, and the clearest demonstration of why the drive is the variable that matters.",
+      "source": "https://note.com/wise_sable1214/n/ncc7ffd5e59b1",
+      "source_label": "note.com write-up"
+    }
+  ],
+
+  "milestones": [
+    {
+      "date": "2025-08-25",
+      "version": "2.0",
+      "headline": "Under five minutes, with a fast connection",
+      "body": "DHH publishes the breakdown: one minute formatting and encrypting the drive, one minute installing Arch, two minutes forty installing and configuring Omarchy itself. The install still needs the network, so bandwidth is part of everyone's number.",
+      "source": "https://x.com/dhh/status/1959857610489839754",
+      "source_label": "@dhh on X"
+    },
+    {
+      "date": "2025-09-08",
+      "version": "3.0 RC",
+      "headline": "Under three minutes",
+      "body": "Ryan Hughes rebuilds the install flow around a new offline ISO. Removing the network removes the largest source of variance between machines — from here on, an install time is a statement about your disk, not your ISP.",
+      "source": "https://x.com/dhh/status/1965128234871488957",
+      "source_label": "@dhh on X"
+    },
+    {
+      "date": "2025-09-10",
+      "version": "3.0 RC",
+      "headline": "Two minutes",
+      "body": "Two days later, the same work lands at two minutes flat for a full install of a complete, configured operating system.",
+      "source": "https://x.com/dhh/status/1965857746282229793",
+      "source_label": "@dhh on X"
+    },
+    {
+      "date": "2026-08-14",
+      "version": "4.0 (Quattro)",
+      "headline": "Sub-minute becomes possible",
+      "body": "The Quattro release notes claim installation is over 30% faster and the ISO more than a gigabyte smaller, at under 6GB — with sub-minute installs now possible. Days later, an HP ZBook Ultra G1a turns the claim into 50 seconds.",
+      "source": "https://github.com/omacom/omarchy/releases/tag/v4.0.0",
+      "source_label": "Omarchy 4.0.0 release notes"
+    }
+  ],
+
+  "baselines": [
+    {
+      "os": "Windows 11 (26H2)",
+      "time": "15–30 min",
+      "note": "Core install on a modern NVMe SSD, before out-of-box setup, drivers and updates.",
+      "source": "https://learn.microsoft.com/en-us/answers/questions/4272576/how-much-time-to-take-for-windows-11-installation",
+      "source_label": "Microsoft Q&A"
+    },
+    {
+      "os": "macOS Sequoia",
+      "time": "30–60 min",
+      "note": "Full erase-and-reinstall on supported hardware, network dependent.",
+      "source": "https://cleanmymac.com/faq/how-long-macos-sequoia-takes-to-install",
+      "source_label": "CleanMyMac FAQ"
+    }
+  ]
+}
