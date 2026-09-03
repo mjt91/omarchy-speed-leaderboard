@@ -120,3 +120,14 @@ footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--omar
   overflow: visible;
   white-space: pre;
 }
+
+/* The domain reads like an official Omarchy property, so the disclaimer earns
+   a place above the fold rather than only in the footer. */
+.unaffiliated {
+  border-left: 2px solid var(--omarchy-terminal-black);
+  padding-left: 0.85rem;
+  margin: 0 0 2.5rem;
+  color: var(--mdst-color-muted);
+  font-size: 0.82rem;
+  max-width: 44rem;
+}

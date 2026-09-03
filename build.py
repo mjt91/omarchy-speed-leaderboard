@@ -122,6 +122,9 @@ def build():
 {render_logo()}
     <h1>{esc(meta['title'])}</h1>
     <p class="subtitle">{esc(meta['tagline'])}</p>
+    <p class="unaffiliated">An unofficial fan project. Not affiliated with, endorsed by, or run by
+    DHH, Basecamp, 37signals or the Omarchy project. The real Omarchy is at
+    {link('https://omarchy.org/', 'omarchy.org')}.</p>
   </header>
 
   <main>
