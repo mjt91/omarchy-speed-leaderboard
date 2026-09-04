@@ -23,6 +23,13 @@ def link(url, label):
     return f'<a href="{esc(url)}" rel="noopener">{esc(label)}</a>'
 
 
+def stated(run, field):
+    """Not every source gives every field. A visible gap is honest; a plausible
+    guess about someone else's hardware is not."""
+    value = (run.get(field) or "").strip()
+    return value or None
+
+
 def render_logo():
     """The same logo.txt the installer prints above the completion time (MIT,
     from omacom/omarchy). Using the real one keeps the site honest about what
@@ -34,15 +41,30 @@ def render_logo():
 
 
 def render_record(run, meta):
-    """The headline. One number, sourced, with the machine that produced it."""
+    """The headline. One number, sourced, with whatever the source said about the
+    machine that produced it — which is sometimes nothing."""
+    machine = stated(run, "machine")
+    hardware = ", ".join(p for p in (stated(run, "specs"), stated(run, "drive")) if p)
+    who = f"<strong>{esc(run['who'])}</strong>"
+    if machine and hardware:
+        line = f"{who} on a <strong>{esc(machine)}</strong> &mdash; {esc(hardware)}"
+    elif machine:
+        line = f"{who} on a <strong>{esc(machine)}</strong>"
+    elif hardware:
+        line = f"{who} &mdash; {esc(hardware)}"
+    else:
+        line = f'{who} &mdash; <span class="muted">no hardware stated</span>'
+
+    version = stated(run, "version")
+    version_bit = f"Omarchy {esc(version)}" if version else '<span class="muted">version not stated</span>'
+
     return f"""
     <div class="record">
       <div class="record__label">Current world record</div>
       <div class="record__time">{esc(run['time'])}</div>
       <p class="record__meta">
-        <strong>{esc(run['who'])}</strong> on a <strong>{esc(run['machine'])}</strong>
-        &mdash; {esc(run['specs'])}, {esc(run['drive'])}<br>
-        Omarchy {esc(run['version'])} &middot; {esc(run['date'])} &middot; {link(run['source'], run['source_label'])}
+        {line}<br>
+        {version_bit} &middot; {esc(run['date'])} &middot; {link(run['source'], run['source_label'])}
       </p>
     </div>
     <p class="muted small">{esc(run['note'])}</p>
@@ -65,11 +87,15 @@ def render_runs(runs):
     rows = []
     for r in sorted(runs, key=lambda r: r["seconds"]):
         origin = "Observed in the wild" if r["origin"] == "observed" else "Submitted"
+        version = esc(stated(r, "version") or "—")
+        drive = esc(stated(r, "drive") or "Drive not stated")
+        parts = [p for p in (stated(r, "machine"), stated(r, "specs")) if p]
+        hardware = f'<br><span class="muted small">{esc(" · ".join(parts))}</span>' if parts else ""
         rows.append(f"""        <tr>
           <td class="time">{esc(r['time'])}</td>
           <td>{esc(r['who'])}</td>
-          <td>{esc(r['version'])}</td>
-          <td>{esc(r['drive'])}<br><span class="muted small">{esc(r['machine'])} &middot; {esc(r['specs'])}</span></td>
+          <td>{version}</td>
+          <td>{drive}{hardware}</td>
           <td>{esc(r['date'])}</td>
           <td><span class="tag">{esc(origin)}</span><br><span class="small">{link(r['source'], r['source_label'])}</span></td>
         </tr>""")
@@ -138,7 +164,7 @@ def build():
 
     <h2>Recorded runs</h2>
     <p class="lede">One unclassed board. Faster hardware wins, and that is fine &mdash; the specs sit next to
-    every time so you can read a number for what it is.</p>
+    every time the source gave them, so you can read a number for what it is.</p>
     <div class="table-wrap">
 {render_runs(data['runs'])}
     </div>
@@ -146,7 +172,7 @@ def build():
     <div class="notice">
       <h3>About the times on this page</h3>
       <p>Every time here is the number Omarchy's own installer printed on its completion screen
-      &mdash; <span class="time">Installed Omarchy in 0m 50s</span> &mdash; not a stopwatch held by us or anyone else.</p>
+      &mdash; <span class="time">Installed Omarchy in {esc(record['time'])}</span> &mdash; not a stopwatch held by us or anyone else.</p>
       <p><strong>These times are taken on trust.</strong> That screen shows one line of text and nothing else:
       no version, no hardware, no date. A screenshot of it proves nothing, and we are not going to pretend
       otherwise. Versions and specs are self-reported. Runs marked <span class="tag">Observed in the wild</span>

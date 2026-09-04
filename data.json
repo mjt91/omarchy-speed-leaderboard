@@ -1,12 +1,27 @@
 {
   "meta": {
     "title": "Omarchy Speed Leaderboard",
-    "tagline": "DHH called 50 seconds the Omarchy Quattro Install World Record. This is the book that keeps it.",
+    "tagline": "DHH named it the Omarchy Quattro Install World Record at 50 seconds. It has already been beaten. This is the book that keeps it.",
     "repo": "https://github.com/mjt91/omarchy-speed-leaderboard",
     "submit_url": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?template=run-submission.yml",
-    "updated": "2026-09-03"
+    "updated": "2026-09-04"
   },
   "runs": [
+    {
+      "id": "reddit-ocelot-46s",
+      "time": "0m 46s",
+      "seconds": 46,
+      "who": "Relative-Ocelot-101",
+      "version": null,
+      "machine": null,
+      "drive": null,
+      "specs": null,
+      "date": "2026-08-23",
+      "origin": "observed",
+      "note": "Nine days after DHH declared 50 seconds the record, an r/omarchy post beat it by four — without claiming anything. The proof is a phone photo of the completion screen rather than a screenshot, and the poster stated no hardware at all.",
+      "source": "https://www.reddit.com/r/omarchy/comments/1vvqxgc/fastest_omarchy_installation_of_my_life/",
+      "source_label": "r/omarchy"
+    },
     {
       "id": "hp-zbook-50s",
       "time": "0m 50s",
