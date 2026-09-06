@@ -4,9 +4,39 @@
     "tagline": "DHH named it the Omarchy Quattro Install World Record at 50 seconds. It has already been beaten. This is the book that keeps it.",
     "repo": "https://github.com/mjt91/omarchy-speed-leaderboard",
     "submit_url": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/new?template=run-submission.yml",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "runs": [
+    {
+      "id": "powderluv-35s",
+      "time": "0m 35s",
+      "seconds": 35,
+      "who": "powderluv",
+      "version": "4.0.2",
+      "machine": "Halo Laptop",
+      "drive": "SK hynix PCB01",
+      "specs": "AMD Ryzen",
+      "date": "2026-09-05",
+      "origin": "submitted",
+      "note": "First sub-40-second install on record. The poster also shared the run to X — the public link in the submission doubles as independent corroboration beyond the screenshot.",
+      "source": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/2",
+      "source_label": "GitHub issue #2"
+    },
+    {
+      "id": "sanjay-44s",
+      "time": "0m 44s",
+      "seconds": 44,
+      "who": "J-Sanjay",
+      "version": "4.0.0",
+      "machine": null,
+      "drive": "Crucial P3 Plus 1TB Gen4",
+      "specs": "Ryzen 5 7600X, GSkill 32GB DDR5",
+      "date": "2026-09-05",
+      "origin": "submitted",
+      "note": "The first submission to the leaderboard issue form. Beats the previous Reddit time by two seconds; the drive and CPU are stated, the machine is not.",
+      "source": "https://github.com/mjt91/omarchy-speed-leaderboard/issues/1",
+      "source_label": "GitHub issue #1"
+    },
     {
       "id": "reddit-ocelot-46s",
       "time": "0m 46s",
