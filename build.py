@@ -23,6 +23,17 @@ def link(url, label):
     return f'<a href="{esc(url)}" rel="noopener">{esc(label)}</a>'
 
 
+def gh_user(username):
+    """Link a who-field to its GitHub profile when it looks like one. Anything
+    that doesn't match GitHub's username rules (alnum + hyphen, 1-39 chars)
+    falls back to plain text — labels like 'Anonymous' or version strings
+    stay unlinked rather than 404."""
+    u = (username or "").strip()
+    if not u or not all(c.isalnum() or c == "-" for c in u) or not 1 <= len(u) <= 39:
+        return esc(username)
+    return f'<a href="https://github.com/{esc(u)}" rel="noopener">{esc(u)}</a>'
+
+
 def stated(run, field):
     """Not every source gives every field. A visible gap is honest; a plausible
     guess about someone else's hardware is not."""
@@ -45,7 +56,7 @@ def render_record(run, meta):
     machine that produced it — which is sometimes nothing."""
     machine = stated(run, "machine")
     hardware = ", ".join(p for p in (stated(run, "specs"), stated(run, "drive")) if p)
-    who = f"<strong>{esc(run['who'])}</strong>"
+    who = f"<strong>{gh_user(run['who'])}</strong>"
     if machine and hardware:
         line = f"{who} on a <strong>{esc(machine)}</strong> &mdash; {esc(hardware)}"
     elif machine:
@@ -93,7 +104,7 @@ def render_runs(runs):
         hardware = f'<br><span class="muted small">{esc(" · ".join(parts))}</span>' if parts else ""
         rows.append(f"""        <tr>
           <td class="time">{esc(r['time'])}</td>
-          <td>{esc(r['who'])}</td>
+          <td>{gh_user(r['who'])}</td>
           <td>{version}</td>
           <td>{drive}{hardware}</td>
           <td>{esc(r['date'])}</td>
